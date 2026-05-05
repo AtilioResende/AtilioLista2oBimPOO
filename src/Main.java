@@ -6,5 +6,10 @@ public class Main {
         /*Anote a saída no código como comentário. O que aparece? É legível?
         Aparece "mesa, 50.0". É legível.
          */
+
+        Produto p2 = new Produto("Caneta", 2.50);
+        System.out.println(p2);
+
+        System.out.println("Item: "+ p2);
     }
 }
