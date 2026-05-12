@@ -1,4 +1,4 @@
-import Exercicio01.Produto;
+/*import Exercicio01.Produto;
 public class Main {
     public static void main(String[] args) {
         Produto p1 = new Produto("mesa", 50);
@@ -7,9 +7,9 @@ public class Main {
         Aparece "mesa, 50.0". É legível.
          */
 
-        Produto p2 = new Produto("Caneta", 2.50);
+      /*  Produto p2 = new Produto("Caneta", 2.50);
         System.out.println(p2);
 
         System.out.println("Item: "+ p2);
     }
-}
+}*/
