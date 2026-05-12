@@ -1,4 +1,5 @@
 package Exercicio05;
+import java.util.Objects;
 
 public class Livro {
 
@@ -17,8 +18,13 @@ public class Livro {
         return this.isbn.equals(outro.isbn);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(isbn); // mesmo campo do equals
+    }
+
     public static void main(String[] args) {
-        Livro l1 = new Livro("Dirty Code", "978-0132350884");
+        Livro l1 = new Livro("Dirty Code", "978-0132350882");
         Livro l2 = new Livro("Clean Code", "978-0132350884");
         System.out.println(l1 == l2);
         System.out.println(l1.equals(l2));
@@ -26,6 +32,9 @@ public class Livro {
         //RESPOSTA: Não.
         System.out.println(l1.equals(null));
         System.out.println(l1.equals("texto de teste"));
+
+        System.out.println("l1.hashCode(): "+ l1.hashCode());
+        System.out.println("l2.hashCode(): "+ l2.hashCode());
 
     }
 }
@@ -72,5 +81,12 @@ REPOSTA: Não.
 Comente: por que comparamos pelo ISBN e não pelo título?
 RESPOSTA: Por que pode haver livros com títulos homônimmos. Portanto, a fim
 de evitar mal-entendidos, usa-se o identificador único: o isbn.
+
+EXERCICIO 7:
+Na Main, imprima o hashCode de dois livros com o mesmo ISBN. São iguais?
+RESPOSTA: Sim, são iguais.
+
+Imprima o hashCode de dois livros com ISBNs diferentes. São diferentes?
+RESPOSTA: Sim. Os hashCodes de livros com ISBNs diferentes também são diferentes.
 
  */
