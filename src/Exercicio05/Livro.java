@@ -9,11 +9,24 @@ public class Livro {
         this.isbn = isbn;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof Livro)) return false;
+        Livro outro = (Livro) obj;
+        return this.isbn.equals(outro.isbn);
+    }
+
     public static void main(String[] args) {
-        Livro l1 = new Livro("Clean Code", "978-0132350884");
+        Livro l1 = new Livro("Dirty Code", "978-0132350884");
         Livro l2 = new Livro("Clean Code", "978-0132350884");
-        System.out.println(l1 == l2); // ?
-        System.out.println(l1.equals(l2)); // ?
+        System.out.println(l1 == l2);
+        System.out.println(l1.equals(l2));
+        //Teste passando null e uma String para o equals(). Lança exceção?
+        //RESPOSTA: Não.
+        System.out.println(l1.equals(null));
+        System.out.println(l1.equals("texto de teste"));
+
     }
 }
 
@@ -48,5 +61,16 @@ O método equals() já existe com suas proprieadades particulares na classe
 Object. Entretanto, quis mudar seu comportamento para comparar os dados
 do livro. Por isso, eu SOBRESCREVI o método.
 
+EXERCÍCIO 6:
+
+Teste com dois livros de mesmo ISBN mas títulos diferentes. São iguais?
+RESPOSTA: Sim. Mesmo mudando o titulo de l1, o sistema diz que são iguais(true)
+
+Teste passando null e uma String para o equals(). Lança exceção?
+REPOSTA: Não.
+
+Comente: por que comparamos pelo ISBN e não pelo título?
+RESPOSTA: Por que pode haver livros com títulos homônimmos. Portanto, a fim
+de evitar mal-entendidos, usa-se o identificador único: o isbn.
 
  */
