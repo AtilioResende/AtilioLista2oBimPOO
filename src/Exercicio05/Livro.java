@@ -15,12 +15,17 @@ public class Livro {
         if (this == obj) return true;
         if (!(obj instanceof Livro)) return false;
         Livro outro = (Livro) obj;
-        return this.isbn.equals(outro.isbn);
+        return Objects.equals(this.isbn, outro.isbn);
     }
 
-    @Override
+    /*@Override
     public int hashCode() {
-        return Objects.hash(isbn); // mesmo campo do equals
+        return Objects.hash(isbn);
+    }*/
+
+    @Override
+    public String toString() {
+        return "Livro[titulo=" + titulo + ", isbn=" + isbn + "]";
     }
 
     public static void main(String[] args) {
